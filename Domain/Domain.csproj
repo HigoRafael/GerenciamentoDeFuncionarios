@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="DataAccess">
+      <HintPath>bin\Debug\netcoreapp3.1\DataAccess.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
