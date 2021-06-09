@@ -18,7 +18,7 @@ namespace DataAcces
                 using (var cmd = new MySqlCommand())
                 {
                     cmd.Connection = connection;
-                    cmd.CommandText = $"select distinct * from usuarios where loginName = '{user}' and senha = '{pass}'";
+                    cmd.CommandText = $"select distinct * from usuarios where usuario = '{user}' and senha = '{pass}'";
                     cmd.CommandType = CommandType.Text;
                     MySqlDataReader reader = cmd.ExecuteReader();
 

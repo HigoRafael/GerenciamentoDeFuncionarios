@@ -9,10 +9,10 @@ namespace DataAcces
 {
     public abstract class ConnectionFactory
     {
-        private const String serverDB = "localhost";
-        private const String dataBase = "empresa";
+        private const String serverDB = "10.57.64.203";
+        private const String dataBase = "funcionarioscalcomp";
         private const String user = "root";
-        private const String senha = "";
+        private const String senha = "rootpass1234";
         private readonly string connectionString;
 
         public ConnectionFactory()
