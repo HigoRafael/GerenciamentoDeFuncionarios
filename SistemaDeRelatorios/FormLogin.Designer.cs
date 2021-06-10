@@ -38,19 +38,19 @@
             this.textBoxSenha = new System.Windows.Forms.TextBox();
             this.lblLogin = new System.Windows.Forms.Label();
             this.buttonAcessar = new System.Windows.Forms.Button();
-            this.btnClose = new System.Windows.Forms.PictureBox();
-            this.btnMini = new System.Windows.Forms.PictureBox();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.lblMensagemErro = new System.Windows.Forms.Label();
+            this.btnMini = new System.Windows.Forms.PictureBox();
+            this.btnClose = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMini)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -60,10 +60,11 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(27, 74);
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = global::SistemaDeRelatorios.Properties.Resources.CCInfinityLogo;
+            this.pictureBox1.Location = new System.Drawing.Point(27, 100);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(188, 156);
+            this.pictureBox1.Size = new System.Drawing.Size(188, 91);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -82,6 +83,7 @@
             // 
             // lineShape2
             // 
+            this.lineShape2.Enabled = false;
             this.lineShape2.Name = "lineShape2";
             this.lineShape2.X1 = 311;
             this.lineShape2.X2 = 718;
@@ -98,30 +100,32 @@
             // 
             // textBoxUser
             // 
-            this.textBoxUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.textBoxUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.textBoxUser.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxUser.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBoxUser.ForeColor = System.Drawing.Color.DimGray;
             this.textBoxUser.Location = new System.Drawing.Point(310, 74);
             this.textBoxUser.Name = "textBoxUser";
             this.textBoxUser.Size = new System.Drawing.Size(408, 20);
-            this.textBoxUser.TabIndex = 2;
+            this.textBoxUser.TabIndex = 0;
             this.textBoxUser.Text = "USUARIO";
             this.textBoxUser.Enter += new System.EventHandler(this.textBoxUser_Enter);
+            this.textBoxUser.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBoxUser_KeyUp);
             this.textBoxUser.Leave += new System.EventHandler(this.textBoxUser_Leave);
             // 
             // textBoxSenha
             // 
-            this.textBoxSenha.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.textBoxSenha.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.textBoxSenha.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxSenha.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBoxSenha.ForeColor = System.Drawing.Color.DimGray;
             this.textBoxSenha.Location = new System.Drawing.Point(310, 147);
             this.textBoxSenha.Name = "textBoxSenha";
             this.textBoxSenha.Size = new System.Drawing.Size(408, 20);
-            this.textBoxSenha.TabIndex = 3;
+            this.textBoxSenha.TabIndex = 1;
             this.textBoxSenha.Text = "SENHA";
             this.textBoxSenha.Enter += new System.EventHandler(this.textBoxSenha_Enter);
+            this.textBoxSenha.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBoxSenha_KeyUp);
             this.textBoxSenha.Leave += new System.EventHandler(this.textBoxSenha_Leave);
             // 
             // lblLogin
@@ -146,32 +150,10 @@
             this.buttonAcessar.Location = new System.Drawing.Point(311, 238);
             this.buttonAcessar.Name = "buttonAcessar";
             this.buttonAcessar.Size = new System.Drawing.Size(408, 40);
-            this.buttonAcessar.TabIndex = 5;
+            this.buttonAcessar.TabIndex = 3;
             this.buttonAcessar.Text = "ACESSAR";
             this.buttonAcessar.UseVisualStyleBackColor = false;
             this.buttonAcessar.Click += new System.EventHandler(this.buttonAcessar_Click);
-            // 
-            // btnClose
-            // 
-            this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
-            this.btnClose.Location = new System.Drawing.Point(757, 3);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(20, 20);
-            this.btnClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnClose.TabIndex = 6;
-            this.btnClose.TabStop = false;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
-            // btnMini
-            // 
-            this.btnMini.Image = ((System.Drawing.Image)(resources.GetObject("btnMini.Image")));
-            this.btnMini.Location = new System.Drawing.Point(731, 3);
-            this.btnMini.Name = "btnMini";
-            this.btnMini.Size = new System.Drawing.Size(20, 20);
-            this.btnMini.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnMini.TabIndex = 7;
-            this.btnMini.TabStop = false;
-            this.btnMini.Click += new System.EventHandler(this.btnMini_Click);
             // 
             // linkLabel1
             // 
@@ -183,7 +165,7 @@
             this.linkLabel1.Location = new System.Drawing.Point(451, 300);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(109, 21);
-            this.linkLabel1.TabIndex = 0;
+            this.linkLabel1.TabIndex = 4;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "BEM VINDO !";
             // 
@@ -199,11 +181,35 @@
             this.lblMensagemErro.Text = "Error";
             this.lblMensagemErro.Visible = false;
             // 
+            // btnMini
+            // 
+            this.btnMini.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.btnMini.Image = ((System.Drawing.Image)(resources.GetObject("btnMini.Image")));
+            this.btnMini.Location = new System.Drawing.Point(731, 3);
+            this.btnMini.Name = "btnMini";
+            this.btnMini.Size = new System.Drawing.Size(20, 20);
+            this.btnMini.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnMini.TabIndex = 7;
+            this.btnMini.TabStop = false;
+            this.btnMini.Click += new System.EventHandler(this.btnMini_Click);
+            // 
+            // btnClose
+            // 
+            this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(90)))), ((int)(((byte)(90)))));
+            this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
+            this.btnClose.Location = new System.Drawing.Point(757, 3);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(20, 20);
+            this.btnClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnClose.TabIndex = 6;
+            this.btnClose.TabStop = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
             // FormLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.ClientSize = new System.Drawing.Size(780, 330);
             this.Controls.Add(this.lblMensagemErro);
             this.Controls.Add(this.linkLabel1);
@@ -222,8 +228,8 @@
             this.Text = "Login";
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnClose)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMini)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnClose)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

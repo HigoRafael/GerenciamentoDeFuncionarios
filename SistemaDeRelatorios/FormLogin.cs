@@ -104,5 +104,21 @@ namespace SistemaDeRelatorios
             lblMensagemErro.Text = "  " + mensagem;
             lblMensagemErro.Visible = true;
         }
+
+        private void textBoxUser_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter) 
+            { 
+               textBoxSenha.Focus();
+            }
+        }
+
+        private void textBoxSenha_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                buttonAcessar_Click(this, null);
+            }
+        }
     }
 }
