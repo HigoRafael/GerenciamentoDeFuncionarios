@@ -1,0 +1,1 @@
+Software desenvolvido para gerenciar informações de cada funcionario de uma empresa bem como nome, função, setor e etc. Para que o programa funcione corretamente, baixe o Power Packs 3.0, ele instala um pacote de DLL's que o projeto usa na parte de design
