@@ -10,6 +10,7 @@ namespace DataAcces
 {
     public class UserDao : ConnectionFactory
     {
+        
         public bool Login(String user, String pass)
         {
             using (var connection = GetConnection())
@@ -33,5 +34,27 @@ namespace DataAcces
                 }
             }
         }
+
+        public DataTable CarregarDados()
+        {
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                using (var cmd = new MySqlCommand())
+                {
+                    cmd.Connection = connection;
+                    cmd.CommandText = "SELECT DISTINCT * FROM funcionarios ORDER BY nome ASC";
+                    cmd.CommandType = CommandType.Text;
+                    MySqlDataReader reader = cmd.ExecuteReader();
+
+                    DataTable result = new DataTable();
+                    result.Load(reader);
+                    return result;
+                }
+            }
+        }
+
+
+
     }
 }
