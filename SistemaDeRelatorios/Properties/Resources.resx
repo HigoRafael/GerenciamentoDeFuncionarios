@@ -124,4 +124,7 @@
   <data name="CCInfinityLogo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\CCInfinityLogo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="d8ee0a0b9c7f64e7286b0c939306449a" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\d8ee0a0b9c7f64e7286b0c939306449a.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

@@ -79,5 +79,15 @@ namespace SistemaDeRelatorios.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap d8ee0a0b9c7f64e7286b0c939306449a {
+            get {
+                object obj = ResourceManager.GetObject("d8ee0a0b9c7f64e7286b0c939306449a", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
