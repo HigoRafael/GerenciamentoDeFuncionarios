@@ -75,7 +75,7 @@ namespace SistemaDeRelatorios
                     MessageBox.Show("Erro ao inserir registro. Verifique se todos os dados foram preenchidos corretamente.");
                 }
             }
-             if (editar == true)
+            if (editar == true)
             {
                 try
                 {
@@ -135,7 +135,24 @@ namespace SistemaDeRelatorios
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                if (dataGridViewDados.SelectedRows.Count > 0)
+                {
+                    idFunc = Convert.ToInt32(dataGridViewDados.CurrentRow.Cells["id"].Value.ToString());
+                    user.Deletar(idFunc);
+                    MessageBox.Show("Registro excluido com sucesso.");
+                    CarregarDados();
+                }
+                else
+                {
+                    MessageBox.Show("Erro ao tentar exluir.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao tentar exluir.");
+            }
         }
     }
 }

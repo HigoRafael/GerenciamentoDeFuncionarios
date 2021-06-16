@@ -113,7 +113,7 @@ namespace DataAcces
                 using (var cmd = new MySqlCommand())
                 {
                     cmd.Connection = connection;
-                    cmd.CommandText = $"DELETE FROM FUNCIONARIOS WHERE ID = '{id}'";
+                    cmd.CommandText = $"DELETE FROM funcionarios WHERE id = '{id}'";
                     cmd.CommandType = CommandType.Text;
                     cmd.ExecuteNonQuery();
                 }
