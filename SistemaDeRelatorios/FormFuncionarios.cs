@@ -69,6 +69,7 @@ namespace SistemaDeRelatorios
                 {
                     user.Inserir(txtDep.Text, txtSetor.Text, txtFunc.Text, txtMat.Text, Convert.ToInt32(txtNumCard.Text), txtNome.Text, txtRemark.Text, txtBloco.Text, txtFoto.Text, Convert.ToInt32(txtNumArm.Text));
                     CarregarDados();
+                    LimpaCamposRedirecionaFoca();
                 }
                 catch (Exception ex)
                 {
@@ -83,6 +84,7 @@ namespace SistemaDeRelatorios
                     MessageBox.Show("Dados atualizados com sucesso.");
                     CarregarDados();
                     editar = false;
+                    LimpaCamposRedirecionaFoca();
                 }
                 catch (Exception ex)
                 {
@@ -152,6 +154,94 @@ namespace SistemaDeRelatorios
             catch (Exception ex)
             {
                 MessageBox.Show("Erro ao tentar exluir.");
+            }
+        }
+        
+        private void LimpaCamposRedirecionaFoca()
+        {
+            txtDep.Clear();
+            txtSetor.Clear();
+            txtFunc.Clear();
+            txtMat.Clear();
+            txtNumCard.Clear();
+            txtNome.Clear();
+            txtRemark.Clear();
+            txtBloco.Clear();
+            txtNumArm.Clear();
+            txtFoto.Clear();
+
+            txtDep.Focus();
+        }
+
+        private void txtDep_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txtSetor.Focus();
+            }
+        }
+
+        private void txtSetor_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txtFunc.Focus();
+            }
+        }
+
+        private void txtFunc_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txtMat.Focus();
+            }
+        }
+
+        private void txtMat_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txtNumCard.Focus();
+            }
+        }
+
+        private void txtNumCard_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txtNome.Focus();
+            }
+        }
+
+        private void txtNome_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txtRemark.Focus();
+            }
+        }
+
+        private void txtRemark_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txtBloco.Focus();
+            }
+        }
+
+        private void txtBloco_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txtNumArm.Focus();
+            }
+        }
+
+        private void txtNumArm_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnBuscarFoto.Focus();
             }
         }
     }

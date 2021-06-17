@@ -65,6 +65,7 @@ namespace SistemaDeRelatorios
             this.txtDep = new System.Windows.Forms.TextBox();
             this.btnMini = new System.Windows.Forms.PictureBox();
             this.btnClose = new System.Windows.Forms.PictureBox();
+            this.SFDFoto = new System.Windows.Forms.SaveFileDialog();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgImagem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDados)).BeginInit();
@@ -418,7 +419,6 @@ namespace SistemaDeRelatorios
             // txtFoto
             // 
             this.txtFoto.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtFoto.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtFoto.Font = new System.Drawing.Font("Arial Narrow", 12F);
             this.txtFoto.Location = new System.Drawing.Point(172, 532);
             this.txtFoto.Name = "txtFoto";
@@ -434,6 +434,7 @@ namespace SistemaDeRelatorios
             this.txtNumArm.Name = "txtNumArm";
             this.txtNumArm.Size = new System.Drawing.Size(221, 19);
             this.txtNumArm.TabIndex = 8;
+            this.txtNumArm.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtNumArm_KeyUp);
             // 
             // txtBloco
             // 
@@ -444,6 +445,7 @@ namespace SistemaDeRelatorios
             this.txtBloco.Name = "txtBloco";
             this.txtBloco.Size = new System.Drawing.Size(221, 19);
             this.txtBloco.TabIndex = 7;
+            this.txtBloco.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtBloco_KeyUp);
             // 
             // txtRemark
             // 
@@ -454,6 +456,7 @@ namespace SistemaDeRelatorios
             this.txtRemark.Name = "txtRemark";
             this.txtRemark.Size = new System.Drawing.Size(221, 19);
             this.txtRemark.TabIndex = 6;
+            this.txtRemark.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtRemark_KeyUp);
             // 
             // txtNome
             // 
@@ -464,6 +467,7 @@ namespace SistemaDeRelatorios
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(221, 19);
             this.txtNome.TabIndex = 5;
+            this.txtNome.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtNome_KeyUp);
             // 
             // txtNumCard
             // 
@@ -474,6 +478,7 @@ namespace SistemaDeRelatorios
             this.txtNumCard.Name = "txtNumCard";
             this.txtNumCard.Size = new System.Drawing.Size(221, 19);
             this.txtNumCard.TabIndex = 4;
+            this.txtNumCard.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtNumCard_KeyUp);
             // 
             // txtMat
             // 
@@ -484,6 +489,7 @@ namespace SistemaDeRelatorios
             this.txtMat.Name = "txtMat";
             this.txtMat.Size = new System.Drawing.Size(221, 19);
             this.txtMat.TabIndex = 3;
+            this.txtMat.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtMat_KeyUp);
             // 
             // txtFunc
             // 
@@ -494,6 +500,7 @@ namespace SistemaDeRelatorios
             this.txtFunc.Name = "txtFunc";
             this.txtFunc.Size = new System.Drawing.Size(221, 19);
             this.txtFunc.TabIndex = 2;
+            this.txtFunc.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtFunc_KeyUp);
             // 
             // txtSetor
             // 
@@ -504,6 +511,7 @@ namespace SistemaDeRelatorios
             this.txtSetor.Name = "txtSetor";
             this.txtSetor.Size = new System.Drawing.Size(221, 19);
             this.txtSetor.TabIndex = 1;
+            this.txtSetor.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtSetor_KeyUp);
             // 
             // txtDep
             // 
@@ -514,6 +522,7 @@ namespace SistemaDeRelatorios
             this.txtDep.Name = "txtDep";
             this.txtDep.Size = new System.Drawing.Size(221, 19);
             this.txtDep.TabIndex = 0;
+            this.txtDep.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtDep_KeyUp);
             // 
             // btnMini
             // 
@@ -604,5 +613,6 @@ namespace SistemaDeRelatorios
         private System.Windows.Forms.Button btnBuscarMat;
         private System.Windows.Forms.TextBox txtBuscMat;
         private System.Windows.Forms.LinkLabel lblMat;
+        private System.Windows.Forms.SaveFileDialog SFDFoto;
     }
 }
