@@ -14,7 +14,7 @@ namespace SistemaDeRelatorios
     public partial class FormFuncionarios : Form
     {
         UserModel user = new UserModel();
-        public int idFunc = 0;
+        private int idFunc = 0;
         private bool editar;
 
         public FormFuncionarios()
@@ -98,6 +98,8 @@ namespace SistemaDeRelatorios
             try
             {
                 dataGridViewDados.DataSource = user.CarregarDadosMatricula(Convert.ToInt32(txtBuscMat.Text));
+                txtBuscMat.Clear();
+                txtBuscMat.Focus();
             }
             catch (Exception ex)
             {
@@ -144,6 +146,7 @@ namespace SistemaDeRelatorios
                     idFunc = Convert.ToInt32(dataGridViewDados.CurrentRow.Cells["id"].Value.ToString());
                     user.Deletar(idFunc);
                     MessageBox.Show("Registro excluido com sucesso.");
+                    LimpaCamposRedirecionaFoca();
                     CarregarDados();
                 }
                 else
@@ -169,6 +172,7 @@ namespace SistemaDeRelatorios
             txtBloco.Clear();
             txtNumArm.Clear();
             txtFoto.Clear();
+            imgImagem.Image = null;
 
             txtDep.Focus();
         }
@@ -242,6 +246,29 @@ namespace SistemaDeRelatorios
             if (e.KeyCode == Keys.Enter)
             {
                 btnBuscarFoto.Focus();
+            }
+        }
+
+        private void txtBuscMat_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnBuscarMat_Click(this, null);
+            }
+        }
+
+        private void btnCinsultaRec_Click(object sender, EventArgs e)
+        {
+            CarregarDados();
+        }
+
+        private void btnBuscarFoto_Click(object sender, EventArgs e)
+        {
+
+            OpenFileDialog openFileDialog1 = new OpenFileDialog();
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                txtFoto.Text = openFileDialog1.FileName;  
             }
         }
     }

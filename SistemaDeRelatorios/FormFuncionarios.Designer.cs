@@ -65,7 +65,8 @@ namespace SistemaDeRelatorios
             this.txtDep = new System.Windows.Forms.TextBox();
             this.btnMini = new System.Windows.Forms.PictureBox();
             this.btnClose = new System.Windows.Forms.PictureBox();
-            this.SFDFoto = new System.Windows.Forms.SaveFileDialog();
+            this.btnCinsultaRec = new System.Windows.Forms.Button();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgImagem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDados)).BeginInit();
@@ -90,6 +91,7 @@ namespace SistemaDeRelatorios
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.btnCinsultaRec);
             this.panel1.Controls.Add(this.lblMat);
             this.panel1.Controls.Add(this.btnBuscarMat);
             this.panel1.Controls.Add(this.txtBuscMat);
@@ -142,6 +144,7 @@ namespace SistemaDeRelatorios
             this.txtBuscMat.Size = new System.Drawing.Size(119, 19);
             this.txtBuscMat.TabIndex = 33;
             this.txtBuscMat.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtBuscMat.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtBuscMat_KeyUp);
             // 
             // imgImagem
             // 
@@ -245,6 +248,7 @@ namespace SistemaDeRelatorios
             this.btnBuscarFoto.TabIndex = 32;
             this.btnBuscarFoto.Text = "...";
             this.btnBuscarFoto.UseVisualStyleBackColor = false;
+            this.btnBuscarFoto.Click += new System.EventHandler(this.btnBuscarFoto_Click);
             // 
             // buttonInserir
             // 
@@ -550,6 +554,28 @@ namespace SistemaDeRelatorios
             this.btnClose.TabStop = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // btnCinsultaRec
+            // 
+            this.btnCinsultaRec.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnCinsultaRec.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCinsultaRec.BackgroundImage")));
+            this.btnCinsultaRec.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnCinsultaRec.CausesValidation = false;
+            this.btnCinsultaRec.FlatAppearance.BorderSize = 0;
+            this.btnCinsultaRec.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.btnCinsultaRec.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnCinsultaRec.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCinsultaRec.ForeColor = System.Drawing.Color.LightGray;
+            this.btnCinsultaRec.Location = new System.Drawing.Point(250, 151);
+            this.btnCinsultaRec.Name = "btnCinsultaRec";
+            this.btnCinsultaRec.Size = new System.Drawing.Size(33, 34);
+            this.btnCinsultaRec.TabIndex = 36;
+            this.btnCinsultaRec.UseVisualStyleBackColor = false;
+            this.btnCinsultaRec.Click += new System.EventHandler(this.btnCinsultaRec_Click);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
             // FormFuncionarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -613,6 +639,7 @@ namespace SistemaDeRelatorios
         private System.Windows.Forms.Button btnBuscarMat;
         private System.Windows.Forms.TextBox txtBuscMat;
         private System.Windows.Forms.LinkLabel lblMat;
-        private System.Windows.Forms.SaveFileDialog SFDFoto;
+        private System.Windows.Forms.Button btnCinsultaRec;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }

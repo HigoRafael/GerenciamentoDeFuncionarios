@@ -82,7 +82,7 @@ namespace DataAcces
                 {
                     cmd.Connection = connection;
                     cmd.CommandText = "insert into funcionarios (departamento, setor, funcao, matricula, cardNo, nome, remark, bloco, foto, numArmario)" +
-                        $"values ('{departamento}', '{setor}', '{funcao}', '{matricula}', '{cardNo}', '{nome}', '{remark}','{bloco}', '{foto}', '{numArmario}');";
+                        $"values ('{departamento}', '{setor}', '{funcao}', '{matricula}', '{cardNo}', '{nome}', '{remark}','{bloco}', '{foto.Replace("\\", "/")}', '{numArmario}');";
                     cmd.CommandType = CommandType.Text;
                     cmd.ExecuteNonQuery();
                 }
@@ -98,7 +98,7 @@ namespace DataAcces
                 {
                     cmd.Connection = connection;
                     cmd.CommandText = $"update funcionarios set departamento = '{departamento}', setor = '{setor}', funcao = '{funcao}', matricula = '{matricula}', cardNo = '{cardNo}', nome = '{nome}'," +
-                        $"remark = '{remark}', bloco = '{bloco}', foto = '{foto}', numArmario = '{numArmario}' where id = '{id}'";
+                        $"remark = '{remark}', bloco = '{bloco}', foto = '{foto.Replace("\\", "/")}', numArmario = '{numArmario}' where id = '{id}'";
                     cmd.CommandType = CommandType.Text;
                     cmd.ExecuteNonQuery();
                 }
