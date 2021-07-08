@@ -160,6 +160,10 @@ namespace SistemaDeRelatorios
             txtGrupo.Clear();
             txtCargo.Clear();
             txtFuncao.Clear();
+            txtDescrPosi.Clear();
+            textDesFuncOpe.Clear();
+            textBloco.Clear();
+            textNumeroArmario.Clear();
             txtFoto.Clear();
             imgImagem.Image = null;
 

@@ -32,6 +32,7 @@ namespace SistemaDeRelatorios
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormFuncionarios));
             this.lblFucn = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.dataGridViewDados = new System.Windows.Forms.DataGridView();
             this.btnCinsultaRec = new System.Windows.Forms.Button();
             this.lblMat = new System.Windows.Forms.LinkLabel();
             this.btnBuscarMat = new System.Windows.Forms.Button();
@@ -74,13 +75,12 @@ namespace SistemaDeRelatorios
             this.btnMini = new System.Windows.Forms.PictureBox();
             this.btnClose = new System.Windows.Forms.PictureBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.dataGridViewDados = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDados)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgImagem)).BeginInit();
             this.panelLateral.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMini)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDados)).BeginInit();
             this.SuspendLayout();
             // 
             // lblFucn
@@ -109,6 +109,16 @@ namespace SistemaDeRelatorios
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(790, 812);
             this.panel1.TabIndex = 1;
+            // 
+            // dataGridViewDados
+            // 
+            this.dataGridViewDados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewDados.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dataGridViewDados.Location = new System.Drawing.Point(0, 191);
+            this.dataGridViewDados.Name = "dataGridViewDados";
+            this.dataGridViewDados.Size = new System.Drawing.Size(786, 617);
+            this.dataGridViewDados.TabIndex = 37;
+            this.dataGridViewDados.SelectionChanged += new System.EventHandler(this.dataGridViewDados_SelectionChanged);
             // 
             // btnCinsultaRec
             // 
@@ -676,16 +686,6 @@ namespace SistemaDeRelatorios
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // dataGridViewDados
-            // 
-            this.dataGridViewDados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewDados.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridViewDados.Location = new System.Drawing.Point(0, 191);
-            this.dataGridViewDados.Name = "dataGridViewDados";
-            this.dataGridViewDados.Size = new System.Drawing.Size(786, 617);
-            this.dataGridViewDados.TabIndex = 37;
-            this.dataGridViewDados.SelectionChanged += new System.EventHandler(this.dataGridViewDados_SelectionChanged);
-            // 
             // FormFuncionarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -701,12 +701,12 @@ namespace SistemaDeRelatorios
             this.Text = "FormFuncionarios";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDados)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgImagem)).EndInit();
             this.panelLateral.ResumeLayout(false);
             this.panelLateral.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMini)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDados)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

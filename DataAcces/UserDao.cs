@@ -98,7 +98,7 @@ namespace DataAcces
                 {
                     cmd.Connection = connection;
                     cmd.CommandText = $"update FUNCIONARIOS set FILIAL = '{filial}', MATRICULA = '{matricula}', MATRICULACC = '{matriculacc}', NOME = '{nome}', CENTRO_CUSTO = '{centroCusto}', DESCRICAO_DEPARTAMENTO = '{descricao_departamento}'," +
-                        $"GRUPO = '{grupo}', CARGO = '{cargo}', FUNCAO = '{funcao}', DESCRICAO_POSICAO = '{descreicaoPosicao}', DESC_FUNC_OPE = '{desFuncope}', BLOCO_ARMARIO = '{blocoArmario}', NUMERO_ARMARIO = '{numeroArmario}', FOTO = '{foto.Replace("\\", "/")}' where ID = '{id}'";
+                        $"GRUPO = '{grupo}', CARGO = '{cargo}', FUNCAO = '{funcao}', DESCRICAO_POSICAO = '{descreicaoPosicao}', DES_FUN_OPE = '{desFuncope}', BLOCO_ARMARIO = '{blocoArmario}', NUMERO_ARMARIO = '{numeroArmario}', FOTO = '{foto.Replace("\\", "/")}' where ID = '{id}'";
                     cmd.CommandType = CommandType.Text;
                     cmd.ExecuteNonQuery();
                 }
