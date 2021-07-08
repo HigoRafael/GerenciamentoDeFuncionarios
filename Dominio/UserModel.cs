@@ -30,14 +30,14 @@ namespace Dominio
             return resulta;
         }
 
-        public void Inserir(string depart, string setor, string func, string mat, int carNo, string nom, string rema, string bloc, string foto, int numAr)
+        public void Inserir(string filial, int matricula, string matriculacc, string nome, string centroCusto, string descricao_departamento, string grupo, string cargo, string funcao, string descreicaoPosicao, string desFuncope, string blocoArmario, int numeroArmario, string foto)
         {
-            userDao.InserirDados(depart, setor, func, mat, carNo, nom, rema, bloc, foto, numAr);
+            userDao.InserirDados(filial, matricula, matriculacc, nome, centroCusto, descricao_departamento, grupo, cargo, funcao, descreicaoPosicao, desFuncope, blocoArmario, numeroArmario, foto);
         }
 
-        public void Editar(int id, string depart, string setor, string func, string mat, int carNo, string nom, string rema, string bloc, string foto, int numAr)
+        public void Editar(int id, string filial, int matricula, string matriculacc, string nome, string centroCusto, string descricao_departamento, string grupo, string cargo, string funcao, string descreicaoPosicao, string desFuncope, string blocoArmario, int numeroArmario, string foto)
         {
-            userDao.EditarDados(id, depart, setor, func, mat, carNo, nom, rema, bloc, foto, numAr);
+            userDao.EditarDados(id, filial, matricula, matriculacc, nome, centroCusto, descricao_departamento, grupo, cargo, funcao, descreicaoPosicao, desFuncope, blocoArmario, numeroArmario, foto);
         }
 
         public void Deletar(int id)

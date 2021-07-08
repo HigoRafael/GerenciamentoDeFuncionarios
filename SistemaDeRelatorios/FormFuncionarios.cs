@@ -46,28 +46,13 @@ namespace SistemaDeRelatorios
             dataGridViewDados.DataSource = user.CarregarDados();
         }
 
-        private void dataGridViewDados_SelectionChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                if (dataGridViewDados.SelectedRows.Count > 0)
-                {
-                    imgImagem.Load(dataGridViewDados.SelectedRows[0].Cells[09].Value.ToString());
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Foto não encontrada ou não cadastrado no sistema.");
-            }
-        }
-
         private void buttonInserir_Click(object sender, EventArgs e)
         {
             if (editar == false)
             {
                 try
                 {
-                    user.Inserir(txtDep.Text, txtSetor.Text, txtFunc.Text, txtMat.Text, Convert.ToInt32(txtNumCard.Text), txtNome.Text, txtRemark.Text, txtBloco.Text, txtFoto.Text, Convert.ToInt32(txtNumArm.Text));
+                    user.Inserir(txtFilial.Text, Convert.ToInt32(txtMatricula.Text), txtMatriculaCC.Text, txtNome.Text, txtCentroCusto.Text, txtDescricaoDepartamento.Text, txtGrupo.Text, txtCargo.Text, txtFuncao.Text, txtDescrPosi.Text, textDesFuncOpe.Text, textBloco.Text, Convert.ToInt32(textNumeroArmario.Text), txtFoto.Text);
                     CarregarDados();
                     LimpaCamposRedirecionaFoca();
                 }
@@ -80,7 +65,7 @@ namespace SistemaDeRelatorios
             {
                 try
                 {
-                    user.Editar(Convert.ToInt32(idFunc), txtDep.Text, txtSetor.Text, txtFunc.Text, txtMat.Text, Convert.ToInt32(txtNumCard.Text), txtNome.Text, txtRemark.Text, txtBloco.Text, txtFoto.Text, Convert.ToInt32(txtNumArm.Text));
+                    user.Editar(Convert.ToInt32(idFunc), txtFilial.Text, Convert.ToInt32(txtMatricula.Text), txtMatriculaCC.Text, txtNome.Text, txtCentroCusto.Text, txtDescricaoDepartamento.Text, txtGrupo.Text, txtCargo.Text, txtFuncao.Text, txtDescrPosi.Text, textDesFuncOpe.Text, textBloco.Text, Convert.ToInt32(textNumeroArmario.Text), txtFoto.Text);
                     MessageBox.Show("Dados atualizados com sucesso.");
                     CarregarDados();
                     editar = false;
@@ -114,17 +99,21 @@ namespace SistemaDeRelatorios
                 if (dataGridViewDados.SelectedRows.Count > 0)
                 {
                     editar = true;
-                    idFunc = Convert.ToInt32(dataGridViewDados.CurrentRow.Cells["id"].Value.ToString());
-                    txtDep.Text = dataGridViewDados.CurrentRow.Cells["departamento"].Value.ToString();
-                    txtSetor.Text = dataGridViewDados.CurrentRow.Cells["setor"].Value.ToString();
-                    txtFunc.Text = dataGridViewDados.CurrentRow.Cells["funcao"].Value.ToString();
-                    txtMat.Text = dataGridViewDados.CurrentRow.Cells["matricula"].Value.ToString();
-                    txtNumCard.Text = dataGridViewDados.CurrentRow.Cells["cardNo"].Value.ToString();
-                    txtNome.Text = dataGridViewDados.CurrentRow.Cells["nome"].Value.ToString();
-                    txtRemark.Text = dataGridViewDados.CurrentRow.Cells["remark"].Value.ToString();
-                    txtBloco.Text = dataGridViewDados.CurrentRow.Cells["bloco"].Value.ToString();
-                    txtFoto.Text = dataGridViewDados.CurrentRow.Cells["foto"].Value.ToString();
-                    txtNumArm.Text = dataGridViewDados.CurrentRow.Cells["numArmario"].Value.ToString();
+                    idFunc = Convert.ToInt32(dataGridViewDados.CurrentRow.Cells["ID"].Value.ToString());
+                    txtFilial.Text = dataGridViewDados.CurrentRow.Cells["FILIAL"].Value.ToString();
+                    txtMatricula.Text = dataGridViewDados.CurrentRow.Cells["MATRICULA"].Value.ToString();
+                    txtMatriculaCC.Text = dataGridViewDados.CurrentRow.Cells["MATRICULACC"].Value.ToString();
+                    txtNome.Text = dataGridViewDados.CurrentRow.Cells["NOME"].Value.ToString();
+                    txtCentroCusto.Text = dataGridViewDados.CurrentRow.Cells["CENTRO_CUSTO"].Value.ToString();
+                    txtDescricaoDepartamento.Text = dataGridViewDados.CurrentRow.Cells["DESCRICAO_DEPARTAMENTO"].Value.ToString();
+                    txtGrupo.Text = dataGridViewDados.CurrentRow.Cells["GRUPO"].Value.ToString();
+                    txtCargo.Text = dataGridViewDados.CurrentRow.Cells["CARGO"].Value.ToString();
+                    txtFuncao.Text = dataGridViewDados.CurrentRow.Cells["FUNCAO"].Value.ToString();
+                    txtDescrPosi.Text = dataGridViewDados.CurrentRow.Cells["DESCRICAO_POSICAO"].Value.ToString();
+                    textDesFuncOpe.Text = dataGridViewDados.CurrentRow.Cells["DES_FUN_OPE"].Value.ToString();
+                    textBloco.Text = dataGridViewDados.CurrentRow.Cells["BLOCO_ARMARIO"].Value.ToString();
+                    textNumeroArmario.Text = dataGridViewDados.CurrentRow.Cells["NUMERO_ARMARIO"].Value.ToString();
+                    txtFoto.Text = dataGridViewDados.CurrentRow.Cells["FOTO"].Value.ToString();
                 }
                 else
                 {
@@ -162,26 +151,26 @@ namespace SistemaDeRelatorios
         
         private void LimpaCamposRedirecionaFoca()
         {
-            txtDep.Clear();
-            txtSetor.Clear();
-            txtFunc.Clear();
-            txtMat.Clear();
-            txtNumCard.Clear();
+            txtFilial.Clear();
+            txtMatricula.Clear();
+            txtMatriculaCC.Clear();
             txtNome.Clear();
-            txtRemark.Clear();
-            txtBloco.Clear();
-            txtNumArm.Clear();
+            txtCentroCusto.Clear();
+            txtDescricaoDepartamento.Clear();
+            txtGrupo.Clear();
+            txtCargo.Clear();
+            txtFuncao.Clear();
             txtFoto.Clear();
             imgImagem.Image = null;
 
-            txtDep.Focus();
+            txtFilial.Focus();
         }
 
         private void txtDep_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
-                txtSetor.Focus();
+                txtMatricula.Focus();
             }
         }
 
@@ -189,7 +178,7 @@ namespace SistemaDeRelatorios
         {
             if (e.KeyCode == Keys.Enter)
             {
-                txtFunc.Focus();
+                txtMatriculaCC.Focus();
             }
         }
 
@@ -197,7 +186,7 @@ namespace SistemaDeRelatorios
         {
             if (e.KeyCode == Keys.Enter)
             {
-                txtMat.Focus();
+                txtNome.Focus();
             }
         }
 
@@ -205,7 +194,7 @@ namespace SistemaDeRelatorios
         {
             if (e.KeyCode == Keys.Enter)
             {
-                txtNumCard.Focus();
+                txtCentroCusto.Focus();
             }
         }
 
@@ -213,7 +202,7 @@ namespace SistemaDeRelatorios
         {
             if (e.KeyCode == Keys.Enter)
             {
-                txtNome.Focus();
+                txtDescricaoDepartamento.Focus();
             }
         }
 
@@ -221,7 +210,7 @@ namespace SistemaDeRelatorios
         {
             if (e.KeyCode == Keys.Enter)
             {
-                txtRemark.Focus();
+                txtGrupo.Focus();
             }
         }
 
@@ -229,7 +218,7 @@ namespace SistemaDeRelatorios
         {
             if (e.KeyCode == Keys.Enter)
             {
-                txtBloco.Focus();
+                txtCargo.Focus();
             }
         }
 
@@ -237,7 +226,7 @@ namespace SistemaDeRelatorios
         {
             if (e.KeyCode == Keys.Enter)
             {
-                txtNumArm.Focus();
+                txtFuncao.Focus();
             }
         }
 
@@ -259,6 +248,7 @@ namespace SistemaDeRelatorios
 
         private void btnCinsultaRec_Click(object sender, EventArgs e)
         {
+            LimpaCamposRedirecionaFoca();
             CarregarDados();
         }
 
@@ -269,6 +259,21 @@ namespace SistemaDeRelatorios
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 txtFoto.Text = openFileDialog1.FileName;  
+            }
+        }
+
+        private void dataGridViewDados_SelectionChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dataGridViewDados.SelectedRows.Count > 0)
+                {
+                    imgImagem.Load(dataGridViewDados.SelectedRows[0].Cells[14].Value.ToString());
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Foto não encontrada ou não cadastrado no sistema.");
             }
         }
     }

@@ -32,12 +32,20 @@ namespace SistemaDeRelatorios
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormFuncionarios));
             this.lblFucn = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnCinsultaRec = new System.Windows.Forms.Button();
             this.lblMat = new System.Windows.Forms.LinkLabel();
             this.btnBuscarMat = new System.Windows.Forms.Button();
             this.txtBuscMat = new System.Windows.Forms.TextBox();
             this.imgImagem = new System.Windows.Forms.PictureBox();
-            this.dataGridViewDados = new System.Windows.Forms.DataGridView();
             this.panelLateral = new System.Windows.Forms.Panel();
+            this.linkLabel15 = new System.Windows.Forms.LinkLabel();
+            this.linkLabel14 = new System.Windows.Forms.LinkLabel();
+            this.linkLabel13 = new System.Windows.Forms.LinkLabel();
+            this.linkLabel12 = new System.Windows.Forms.LinkLabel();
+            this.textNumeroArmario = new System.Windows.Forms.TextBox();
+            this.textBloco = new System.Windows.Forms.TextBox();
+            this.textDesFuncOpe = new System.Windows.Forms.TextBox();
+            this.txtDescrPosi = new System.Windows.Forms.TextBox();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnBuscarFoto = new System.Windows.Forms.Button();
@@ -54,25 +62,25 @@ namespace SistemaDeRelatorios
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.txtFoto = new System.Windows.Forms.TextBox();
-            this.txtNumArm = new System.Windows.Forms.TextBox();
-            this.txtBloco = new System.Windows.Forms.TextBox();
-            this.txtRemark = new System.Windows.Forms.TextBox();
+            this.txtFuncao = new System.Windows.Forms.TextBox();
+            this.txtCargo = new System.Windows.Forms.TextBox();
+            this.txtGrupo = new System.Windows.Forms.TextBox();
+            this.txtDescricaoDepartamento = new System.Windows.Forms.TextBox();
+            this.txtCentroCusto = new System.Windows.Forms.TextBox();
             this.txtNome = new System.Windows.Forms.TextBox();
-            this.txtNumCard = new System.Windows.Forms.TextBox();
-            this.txtMat = new System.Windows.Forms.TextBox();
-            this.txtFunc = new System.Windows.Forms.TextBox();
-            this.txtSetor = new System.Windows.Forms.TextBox();
-            this.txtDep = new System.Windows.Forms.TextBox();
+            this.txtMatriculaCC = new System.Windows.Forms.TextBox();
+            this.txtMatricula = new System.Windows.Forms.TextBox();
+            this.txtFilial = new System.Windows.Forms.TextBox();
             this.btnMini = new System.Windows.Forms.PictureBox();
             this.btnClose = new System.Windows.Forms.PictureBox();
-            this.btnCinsultaRec = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.dataGridViewDados = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgImagem)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDados)).BeginInit();
             this.panelLateral.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMini)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDados)).BeginInit();
             this.SuspendLayout();
             // 
             // lblFucn
@@ -91,16 +99,34 @@ namespace SistemaDeRelatorios
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.dataGridViewDados);
             this.panel1.Controls.Add(this.btnCinsultaRec);
             this.panel1.Controls.Add(this.lblMat);
             this.panel1.Controls.Add(this.btnBuscarMat);
             this.panel1.Controls.Add(this.txtBuscMat);
             this.panel1.Controls.Add(this.imgImagem);
-            this.panel1.Controls.Add(this.dataGridViewDados);
             this.panel1.Location = new System.Drawing.Point(0, 31);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(790, 812);
-            this.panel1.TabIndex = 12;
+            this.panel1.TabIndex = 1;
+            // 
+            // btnCinsultaRec
+            // 
+            this.btnCinsultaRec.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnCinsultaRec.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCinsultaRec.BackgroundImage")));
+            this.btnCinsultaRec.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnCinsultaRec.CausesValidation = false;
+            this.btnCinsultaRec.FlatAppearance.BorderSize = 0;
+            this.btnCinsultaRec.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.btnCinsultaRec.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnCinsultaRec.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCinsultaRec.ForeColor = System.Drawing.Color.LightGray;
+            this.btnCinsultaRec.Location = new System.Drawing.Point(250, 151);
+            this.btnCinsultaRec.Name = "btnCinsultaRec";
+            this.btnCinsultaRec.Size = new System.Drawing.Size(33, 34);
+            this.btnCinsultaRec.TabIndex = 36;
+            this.btnCinsultaRec.UseVisualStyleBackColor = false;
+            this.btnCinsultaRec.Click += new System.EventHandler(this.btnCinsultaRec_Click);
             // 
             // lblMat
             // 
@@ -156,21 +182,17 @@ namespace SistemaDeRelatorios
             this.imgImagem.TabIndex = 1;
             this.imgImagem.TabStop = false;
             // 
-            // dataGridViewDados
-            // 
-            this.dataGridViewDados.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.dataGridViewDados.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridViewDados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewDados.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridViewDados.Location = new System.Drawing.Point(0, 191);
-            this.dataGridViewDados.Name = "dataGridViewDados";
-            this.dataGridViewDados.Size = new System.Drawing.Size(786, 617);
-            this.dataGridViewDados.TabIndex = 0;
-            this.dataGridViewDados.SelectionChanged += new System.EventHandler(this.dataGridViewDados_SelectionChanged);
-            // 
             // panelLateral
             // 
             this.panelLateral.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panelLateral.Controls.Add(this.linkLabel15);
+            this.panelLateral.Controls.Add(this.linkLabel14);
+            this.panelLateral.Controls.Add(this.linkLabel13);
+            this.panelLateral.Controls.Add(this.linkLabel12);
+            this.panelLateral.Controls.Add(this.textNumeroArmario);
+            this.panelLateral.Controls.Add(this.textBloco);
+            this.panelLateral.Controls.Add(this.textDesFuncOpe);
+            this.panelLateral.Controls.Add(this.txtDescrPosi);
             this.panelLateral.Controls.Add(this.btnEditar);
             this.panelLateral.Controls.Add(this.btnExcluir);
             this.panelLateral.Controls.Add(this.btnBuscarFoto);
@@ -187,20 +209,116 @@ namespace SistemaDeRelatorios
             this.panelLateral.Controls.Add(this.linkLabel2);
             this.panelLateral.Controls.Add(this.linkLabel1);
             this.panelLateral.Controls.Add(this.txtFoto);
-            this.panelLateral.Controls.Add(this.txtNumArm);
-            this.panelLateral.Controls.Add(this.txtBloco);
-            this.panelLateral.Controls.Add(this.txtRemark);
+            this.panelLateral.Controls.Add(this.txtFuncao);
+            this.panelLateral.Controls.Add(this.txtCargo);
+            this.panelLateral.Controls.Add(this.txtGrupo);
+            this.panelLateral.Controls.Add(this.txtDescricaoDepartamento);
+            this.panelLateral.Controls.Add(this.txtCentroCusto);
             this.panelLateral.Controls.Add(this.txtNome);
-            this.panelLateral.Controls.Add(this.txtNumCard);
-            this.panelLateral.Controls.Add(this.txtMat);
-            this.panelLateral.Controls.Add(this.txtFunc);
-            this.panelLateral.Controls.Add(this.txtSetor);
-            this.panelLateral.Controls.Add(this.txtDep);
+            this.panelLateral.Controls.Add(this.txtMatriculaCC);
+            this.panelLateral.Controls.Add(this.txtMatricula);
+            this.panelLateral.Controls.Add(this.txtFilial);
             this.panelLateral.Dock = System.Windows.Forms.DockStyle.Right;
             this.panelLateral.Location = new System.Drawing.Point(833, 31);
             this.panelLateral.Name = "panelLateral";
             this.panelLateral.Size = new System.Drawing.Size(405, 812);
-            this.panelLateral.TabIndex = 13;
+            this.panelLateral.TabIndex = 0;
+            // 
+            // linkLabel15
+            // 
+            this.linkLabel15.ActiveLinkColor = System.Drawing.SystemColors.Highlight;
+            this.linkLabel15.AutoSize = true;
+            this.linkLabel15.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel15.ForeColor = System.Drawing.Color.DimGray;
+            this.linkLabel15.LinkColor = System.Drawing.Color.DimGray;
+            this.linkLabel15.Location = new System.Drawing.Point(7, 568);
+            this.linkLabel15.Name = "linkLabel15";
+            this.linkLabel15.Size = new System.Drawing.Size(144, 21);
+            this.linkLabel15.TabIndex = 43;
+            this.linkLabel15.TabStop = true;
+            this.linkLabel15.Text = "NUM.  ARMARIO:";
+            // 
+            // linkLabel14
+            // 
+            this.linkLabel14.ActiveLinkColor = System.Drawing.SystemColors.Highlight;
+            this.linkLabel14.AutoSize = true;
+            this.linkLabel14.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel14.ForeColor = System.Drawing.Color.DimGray;
+            this.linkLabel14.LinkColor = System.Drawing.Color.DimGray;
+            this.linkLabel14.Location = new System.Drawing.Point(7, 520);
+            this.linkLabel14.Name = "linkLabel14";
+            this.linkLabel14.Size = new System.Drawing.Size(71, 21);
+            this.linkLabel14.TabIndex = 42;
+            this.linkLabel14.TabStop = true;
+            this.linkLabel14.Text = "BLOCO:";
+            // 
+            // linkLabel13
+            // 
+            this.linkLabel13.ActiveLinkColor = System.Drawing.SystemColors.Highlight;
+            this.linkLabel13.AutoSize = true;
+            this.linkLabel13.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel13.ForeColor = System.Drawing.Color.DimGray;
+            this.linkLabel13.LinkColor = System.Drawing.Color.DimGray;
+            this.linkLabel13.Location = new System.Drawing.Point(7, 485);
+            this.linkLabel13.Name = "linkLabel13";
+            this.linkLabel13.Size = new System.Drawing.Size(149, 21);
+            this.linkLabel13.TabIndex = 41;
+            this.linkLabel13.TabStop = true;
+            this.linkLabel13.Text = "DESCR. FUNC. OP:";
+            // 
+            // linkLabel12
+            // 
+            this.linkLabel12.ActiveLinkColor = System.Drawing.SystemColors.Highlight;
+            this.linkLabel12.AutoSize = true;
+            this.linkLabel12.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel12.ForeColor = System.Drawing.Color.DimGray;
+            this.linkLabel12.LinkColor = System.Drawing.Color.DimGray;
+            this.linkLabel12.Location = new System.Drawing.Point(7, 440);
+            this.linkLabel12.Name = "linkLabel12";
+            this.linkLabel12.Size = new System.Drawing.Size(150, 21);
+            this.linkLabel12.TabIndex = 40;
+            this.linkLabel12.TabStop = true;
+            this.linkLabel12.Text = "DESCR. POSIÇÃO:";
+            // 
+            // textNumeroArmario
+            // 
+            this.textNumeroArmario.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textNumeroArmario.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.textNumeroArmario.Font = new System.Drawing.Font("Arial Narrow", 12F);
+            this.textNumeroArmario.Location = new System.Drawing.Point(174, 570);
+            this.textNumeroArmario.Name = "textNumeroArmario";
+            this.textNumeroArmario.Size = new System.Drawing.Size(221, 19);
+            this.textNumeroArmario.TabIndex = 39;
+            // 
+            // textBloco
+            // 
+            this.textBloco.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBloco.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.textBloco.Font = new System.Drawing.Font("Arial Narrow", 12F);
+            this.textBloco.Location = new System.Drawing.Point(173, 522);
+            this.textBloco.Name = "textBloco";
+            this.textBloco.Size = new System.Drawing.Size(221, 19);
+            this.textBloco.TabIndex = 37;
+            // 
+            // textDesFuncOpe
+            // 
+            this.textDesFuncOpe.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textDesFuncOpe.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.textDesFuncOpe.Font = new System.Drawing.Font("Arial Narrow", 12F);
+            this.textDesFuncOpe.Location = new System.Drawing.Point(174, 485);
+            this.textDesFuncOpe.Name = "textDesFuncOpe";
+            this.textDesFuncOpe.Size = new System.Drawing.Size(221, 19);
+            this.textDesFuncOpe.TabIndex = 36;
+            // 
+            // txtDescrPosi
+            // 
+            this.txtDescrPosi.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtDescrPosi.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtDescrPosi.Font = new System.Drawing.Font("Arial Narrow", 12F);
+            this.txtDescrPosi.Location = new System.Drawing.Point(173, 442);
+            this.txtDescrPosi.Name = "txtDescrPosi";
+            this.txtDescrPosi.Size = new System.Drawing.Size(221, 19);
+            this.txtDescrPosi.TabIndex = 35;
             // 
             // btnEditar
             // 
@@ -210,7 +328,7 @@ namespace SistemaDeRelatorios
             this.btnEditar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditar.ForeColor = System.Drawing.Color.LightGray;
-            this.btnEditar.Location = new System.Drawing.Point(7, 664);
+            this.btnEditar.Location = new System.Drawing.Point(11, 776);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(98, 29);
             this.btnEditar.TabIndex = 34;
@@ -226,7 +344,7 @@ namespace SistemaDeRelatorios
             this.btnExcluir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExcluir.ForeColor = System.Drawing.Color.LightGray;
-            this.btnExcluir.Location = new System.Drawing.Point(143, 664);
+            this.btnExcluir.Location = new System.Drawing.Point(147, 776);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(98, 29);
             this.btnExcluir.TabIndex = 33;
@@ -242,7 +360,7 @@ namespace SistemaDeRelatorios
             this.btnBuscarFoto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnBuscarFoto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscarFoto.ForeColor = System.Drawing.Color.LightGray;
-            this.btnBuscarFoto.Location = new System.Drawing.Point(322, 530);
+            this.btnBuscarFoto.Location = new System.Drawing.Point(319, 618);
             this.btnBuscarFoto.Name = "btnBuscarFoto";
             this.btnBuscarFoto.Size = new System.Drawing.Size(76, 21);
             this.btnBuscarFoto.TabIndex = 32;
@@ -258,7 +376,7 @@ namespace SistemaDeRelatorios
             this.buttonInserir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.buttonInserir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonInserir.ForeColor = System.Drawing.Color.LightGray;
-            this.buttonInserir.Location = new System.Drawing.Point(293, 664);
+            this.buttonInserir.Location = new System.Drawing.Point(297, 776);
             this.buttonInserir.Name = "buttonInserir";
             this.buttonInserir.Size = new System.Drawing.Size(98, 29);
             this.buttonInserir.TabIndex = 31;
@@ -287,12 +405,12 @@ namespace SistemaDeRelatorios
             this.linkLabel10.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel10.ForeColor = System.Drawing.Color.DimGray;
             this.linkLabel10.LinkColor = System.Drawing.Color.DimGray;
-            this.linkLabel10.Location = new System.Drawing.Point(3, 140);
+            this.linkLabel10.Location = new System.Drawing.Point(7, 83);
             this.linkLabel10.Name = "linkLabel10";
-            this.linkLabel10.Size = new System.Drawing.Size(54, 21);
+            this.linkLabel10.Size = new System.Drawing.Size(109, 21);
             this.linkLabel10.TabIndex = 29;
             this.linkLabel10.TabStop = true;
-            this.linkLabel10.Text = "Setor:";
+            this.linkLabel10.Text = "MATRICULA:";
             // 
             // linkLabel9
             // 
@@ -301,12 +419,12 @@ namespace SistemaDeRelatorios
             this.linkLabel9.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel9.ForeColor = System.Drawing.Color.DimGray;
             this.linkLabel9.LinkColor = System.Drawing.Color.DimGray;
-            this.linkLabel9.Location = new System.Drawing.Point(3, 189);
+            this.linkLabel9.Location = new System.Drawing.Point(7, 127);
             this.linkLabel9.Name = "linkLabel9";
-            this.linkLabel9.Size = new System.Drawing.Size(73, 21);
+            this.linkLabel9.Size = new System.Drawing.Size(139, 21);
             this.linkLabel9.TabIndex = 28;
             this.linkLabel9.TabStop = true;
-            this.linkLabel9.Text = "Função:";
+            this.linkLabel9.Text = "MATRICULA CC:";
             // 
             // linkLabel8
             // 
@@ -315,12 +433,12 @@ namespace SistemaDeRelatorios
             this.linkLabel8.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel8.ForeColor = System.Drawing.Color.DimGray;
             this.linkLabel8.LinkColor = System.Drawing.Color.DimGray;
-            this.linkLabel8.Location = new System.Drawing.Point(3, 247);
+            this.linkLabel8.Location = new System.Drawing.Point(7, 164);
             this.linkLabel8.Name = "linkLabel8";
-            this.linkLabel8.Size = new System.Drawing.Size(89, 21);
+            this.linkLabel8.Size = new System.Drawing.Size(64, 21);
             this.linkLabel8.TabIndex = 27;
             this.linkLabel8.TabStop = true;
-            this.linkLabel8.Text = "Matricula:";
+            this.linkLabel8.Text = "NOME:";
             // 
             // linkLabel7
             // 
@@ -329,12 +447,12 @@ namespace SistemaDeRelatorios
             this.linkLabel7.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel7.ForeColor = System.Drawing.Color.DimGray;
             this.linkLabel7.LinkColor = System.Drawing.Color.DimGray;
-            this.linkLabel7.Location = new System.Drawing.Point(3, 292);
+            this.linkLabel7.Location = new System.Drawing.Point(7, 203);
             this.linkLabel7.Name = "linkLabel7";
-            this.linkLabel7.Size = new System.Drawing.Size(158, 21);
+            this.linkLabel7.Size = new System.Drawing.Size(163, 21);
             this.linkLabel7.TabIndex = 26;
             this.linkLabel7.TabStop = true;
-            this.linkLabel7.Text = "Número do Cartão";
+            this.linkLabel7.Text = "CENTRO DE CUSTO:";
             // 
             // linkLabel6
             // 
@@ -343,12 +461,12 @@ namespace SistemaDeRelatorios
             this.linkLabel6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel6.ForeColor = System.Drawing.Color.DimGray;
             this.linkLabel6.LinkColor = System.Drawing.Color.DimGray;
-            this.linkLabel6.Location = new System.Drawing.Point(3, 535);
+            this.linkLabel6.Location = new System.Drawing.Point(7, 615);
             this.linkLabel6.Name = "linkLabel6";
-            this.linkLabel6.Size = new System.Drawing.Size(49, 21);
+            this.linkLabel6.Size = new System.Drawing.Size(58, 21);
             this.linkLabel6.TabIndex = 25;
             this.linkLabel6.TabStop = true;
-            this.linkLabel6.Text = "Foto:";
+            this.linkLabel6.Text = "FOTO:";
             // 
             // linkLabel5
             // 
@@ -357,12 +475,12 @@ namespace SistemaDeRelatorios
             this.linkLabel5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel5.ForeColor = System.Drawing.Color.DimGray;
             this.linkLabel5.LinkColor = System.Drawing.Color.DimGray;
-            this.linkLabel5.Location = new System.Drawing.Point(3, 484);
+            this.linkLabel5.Location = new System.Drawing.Point(7, 397);
             this.linkLabel5.Name = "linkLabel5";
-            this.linkLabel5.Size = new System.Drawing.Size(162, 21);
+            this.linkLabel5.Size = new System.Drawing.Size(85, 21);
             this.linkLabel5.TabIndex = 24;
             this.linkLabel5.TabStop = true;
-            this.linkLabel5.Text = "Número do Amário:";
+            this.linkLabel5.Text = "FUNÇÃO:";
             // 
             // linkLabel4
             // 
@@ -371,12 +489,12 @@ namespace SistemaDeRelatorios
             this.linkLabel4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel4.ForeColor = System.Drawing.Color.DimGray;
             this.linkLabel4.LinkColor = System.Drawing.Color.DimGray;
-            this.linkLabel4.Location = new System.Drawing.Point(3, 436);
+            this.linkLabel4.Location = new System.Drawing.Point(7, 351);
             this.linkLabel4.Name = "linkLabel4";
-            this.linkLabel4.Size = new System.Drawing.Size(56, 21);
+            this.linkLabel4.Size = new System.Drawing.Size(78, 21);
             this.linkLabel4.TabIndex = 23;
             this.linkLabel4.TabStop = true;
-            this.linkLabel4.Text = "Bloco:";
+            this.linkLabel4.Text = "CARGO:";
             // 
             // linkLabel3
             // 
@@ -385,12 +503,12 @@ namespace SistemaDeRelatorios
             this.linkLabel3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel3.ForeColor = System.Drawing.Color.DimGray;
             this.linkLabel3.LinkColor = System.Drawing.Color.DimGray;
-            this.linkLabel3.Location = new System.Drawing.Point(3, 389);
+            this.linkLabel3.Location = new System.Drawing.Point(7, 300);
             this.linkLabel3.Name = "linkLabel3";
-            this.linkLabel3.Size = new System.Drawing.Size(73, 21);
+            this.linkLabel3.Size = new System.Drawing.Size(72, 21);
             this.linkLabel3.TabIndex = 22;
             this.linkLabel3.TabStop = true;
-            this.linkLabel3.Text = "Remark:";
+            this.linkLabel3.Text = "GRUPO:";
             // 
             // linkLabel2
             // 
@@ -399,12 +517,12 @@ namespace SistemaDeRelatorios
             this.linkLabel2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel2.ForeColor = System.Drawing.Color.DimGray;
             this.linkLabel2.LinkColor = System.Drawing.Color.DimGray;
-            this.linkLabel2.Location = new System.Drawing.Point(3, 340);
+            this.linkLabel2.Location = new System.Drawing.Point(7, 249);
             this.linkLabel2.Name = "linkLabel2";
-            this.linkLabel2.Size = new System.Drawing.Size(61, 21);
+            this.linkLabel2.Size = new System.Drawing.Size(126, 21);
             this.linkLabel2.TabIndex = 21;
             this.linkLabel2.TabStop = true;
-            this.linkLabel2.Text = "Nome:";
+            this.linkLabel2.Text = "DESCR. DEPTO:";
             // 
             // linkLabel1
             // 
@@ -413,120 +531,120 @@ namespace SistemaDeRelatorios
             this.linkLabel1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel1.ForeColor = System.Drawing.Color.DimGray;
             this.linkLabel1.LinkColor = System.Drawing.Color.DimGray;
-            this.linkLabel1.Location = new System.Drawing.Point(3, 87);
+            this.linkLabel1.Location = new System.Drawing.Point(7, 44);
             this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(133, 21);
+            this.linkLabel1.Size = new System.Drawing.Size(59, 21);
             this.linkLabel1.TabIndex = 20;
             this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Departamento:";
+            this.linkLabel1.Text = "FILIAL:";
             // 
             // txtFoto
             // 
             this.txtFoto.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtFoto.Font = new System.Drawing.Font("Arial Narrow", 12F);
-            this.txtFoto.Location = new System.Drawing.Point(172, 532);
+            this.txtFoto.Location = new System.Drawing.Point(173, 617);
             this.txtFoto.Name = "txtFoto";
             this.txtFoto.Size = new System.Drawing.Size(119, 19);
             this.txtFoto.TabIndex = 9;
             // 
-            // txtNumArm
+            // txtFuncao
             // 
-            this.txtNumArm.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtNumArm.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtNumArm.Font = new System.Drawing.Font("Arial Narrow", 12F);
-            this.txtNumArm.Location = new System.Drawing.Point(171, 484);
-            this.txtNumArm.Name = "txtNumArm";
-            this.txtNumArm.Size = new System.Drawing.Size(221, 19);
-            this.txtNumArm.TabIndex = 8;
-            this.txtNumArm.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtNumArm_KeyUp);
+            this.txtFuncao.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtFuncao.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtFuncao.Font = new System.Drawing.Font("Arial Narrow", 12F);
+            this.txtFuncao.Location = new System.Drawing.Point(174, 397);
+            this.txtFuncao.Name = "txtFuncao";
+            this.txtFuncao.Size = new System.Drawing.Size(221, 19);
+            this.txtFuncao.TabIndex = 8;
+            this.txtFuncao.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtNumArm_KeyUp);
             // 
-            // txtBloco
+            // txtCargo
             // 
-            this.txtBloco.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtBloco.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtBloco.Font = new System.Drawing.Font("Arial Narrow", 12F);
-            this.txtBloco.Location = new System.Drawing.Point(172, 433);
-            this.txtBloco.Name = "txtBloco";
-            this.txtBloco.Size = new System.Drawing.Size(221, 19);
-            this.txtBloco.TabIndex = 7;
-            this.txtBloco.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtBloco_KeyUp);
+            this.txtCargo.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtCargo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtCargo.Font = new System.Drawing.Font("Arial Narrow", 12F);
+            this.txtCargo.Location = new System.Drawing.Point(174, 351);
+            this.txtCargo.Name = "txtCargo";
+            this.txtCargo.Size = new System.Drawing.Size(221, 19);
+            this.txtCargo.TabIndex = 7;
+            this.txtCargo.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtBloco_KeyUp);
             // 
-            // txtRemark
+            // txtGrupo
             // 
-            this.txtRemark.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtRemark.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtRemark.Font = new System.Drawing.Font("Arial Narrow", 12F);
-            this.txtRemark.Location = new System.Drawing.Point(172, 386);
-            this.txtRemark.Name = "txtRemark";
-            this.txtRemark.Size = new System.Drawing.Size(221, 19);
-            this.txtRemark.TabIndex = 6;
-            this.txtRemark.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtRemark_KeyUp);
+            this.txtGrupo.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtGrupo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtGrupo.Font = new System.Drawing.Font("Arial Narrow", 12F);
+            this.txtGrupo.Location = new System.Drawing.Point(174, 302);
+            this.txtGrupo.Name = "txtGrupo";
+            this.txtGrupo.Size = new System.Drawing.Size(221, 19);
+            this.txtGrupo.TabIndex = 6;
+            this.txtGrupo.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtRemark_KeyUp);
+            // 
+            // txtDescricaoDepartamento
+            // 
+            this.txtDescricaoDepartamento.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtDescricaoDepartamento.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtDescricaoDepartamento.Font = new System.Drawing.Font("Arial Narrow", 12F);
+            this.txtDescricaoDepartamento.Location = new System.Drawing.Point(174, 251);
+            this.txtDescricaoDepartamento.Name = "txtDescricaoDepartamento";
+            this.txtDescricaoDepartamento.Size = new System.Drawing.Size(221, 19);
+            this.txtDescricaoDepartamento.TabIndex = 5;
+            this.txtDescricaoDepartamento.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtNome_KeyUp);
+            // 
+            // txtCentroCusto
+            // 
+            this.txtCentroCusto.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtCentroCusto.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtCentroCusto.Font = new System.Drawing.Font("Arial Narrow", 12F);
+            this.txtCentroCusto.Location = new System.Drawing.Point(174, 205);
+            this.txtCentroCusto.Name = "txtCentroCusto";
+            this.txtCentroCusto.Size = new System.Drawing.Size(221, 19);
+            this.txtCentroCusto.TabIndex = 4;
+            this.txtCentroCusto.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtNumCard_KeyUp);
             // 
             // txtNome
             // 
             this.txtNome.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtNome.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtNome.Font = new System.Drawing.Font("Arial Narrow", 12F);
-            this.txtNome.Location = new System.Drawing.Point(172, 337);
+            this.txtNome.Location = new System.Drawing.Point(174, 166);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(221, 19);
-            this.txtNome.TabIndex = 5;
-            this.txtNome.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtNome_KeyUp);
+            this.txtNome.TabIndex = 3;
+            this.txtNome.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtMat_KeyUp);
             // 
-            // txtNumCard
+            // txtMatriculaCC
             // 
-            this.txtNumCard.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtNumCard.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtNumCard.Font = new System.Drawing.Font("Arial Narrow", 12F);
-            this.txtNumCard.Location = new System.Drawing.Point(172, 289);
-            this.txtNumCard.Name = "txtNumCard";
-            this.txtNumCard.Size = new System.Drawing.Size(221, 19);
-            this.txtNumCard.TabIndex = 4;
-            this.txtNumCard.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtNumCard_KeyUp);
+            this.txtMatriculaCC.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtMatriculaCC.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtMatriculaCC.Font = new System.Drawing.Font("Arial Narrow", 12F);
+            this.txtMatriculaCC.Location = new System.Drawing.Point(174, 129);
+            this.txtMatriculaCC.Name = "txtMatriculaCC";
+            this.txtMatriculaCC.Size = new System.Drawing.Size(221, 19);
+            this.txtMatriculaCC.TabIndex = 2;
+            this.txtMatriculaCC.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtFunc_KeyUp);
             // 
-            // txtMat
+            // txtMatricula
             // 
-            this.txtMat.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtMat.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtMat.Font = new System.Drawing.Font("Arial Narrow", 12F);
-            this.txtMat.Location = new System.Drawing.Point(172, 244);
-            this.txtMat.Name = "txtMat";
-            this.txtMat.Size = new System.Drawing.Size(221, 19);
-            this.txtMat.TabIndex = 3;
-            this.txtMat.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtMat_KeyUp);
+            this.txtMatricula.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtMatricula.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtMatricula.Font = new System.Drawing.Font("Arial Narrow", 12F);
+            this.txtMatricula.Location = new System.Drawing.Point(174, 85);
+            this.txtMatricula.Name = "txtMatricula";
+            this.txtMatricula.Size = new System.Drawing.Size(221, 19);
+            this.txtMatricula.TabIndex = 1;
+            this.txtMatricula.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtSetor_KeyUp);
             // 
-            // txtFunc
+            // txtFilial
             // 
-            this.txtFunc.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtFunc.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtFunc.Font = new System.Drawing.Font("Arial Narrow", 12F);
-            this.txtFunc.Location = new System.Drawing.Point(172, 186);
-            this.txtFunc.Name = "txtFunc";
-            this.txtFunc.Size = new System.Drawing.Size(221, 19);
-            this.txtFunc.TabIndex = 2;
-            this.txtFunc.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtFunc_KeyUp);
-            // 
-            // txtSetor
-            // 
-            this.txtSetor.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtSetor.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtSetor.Font = new System.Drawing.Font("Arial Narrow", 12F);
-            this.txtSetor.Location = new System.Drawing.Point(172, 137);
-            this.txtSetor.Name = "txtSetor";
-            this.txtSetor.Size = new System.Drawing.Size(221, 19);
-            this.txtSetor.TabIndex = 1;
-            this.txtSetor.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtSetor_KeyUp);
-            // 
-            // txtDep
-            // 
-            this.txtDep.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtDep.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtDep.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDep.Location = new System.Drawing.Point(172, 87);
-            this.txtDep.Name = "txtDep";
-            this.txtDep.Size = new System.Drawing.Size(221, 19);
-            this.txtDep.TabIndex = 0;
-            this.txtDep.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtDep_KeyUp);
+            this.txtFilial.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtFilial.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtFilial.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFilial.Location = new System.Drawing.Point(174, 44);
+            this.txtFilial.Name = "txtFilial";
+            this.txtFilial.Size = new System.Drawing.Size(221, 19);
+            this.txtFilial.TabIndex = 0;
+            this.txtFilial.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtDep_KeyUp);
             // 
             // btnMini
             // 
@@ -554,27 +672,19 @@ namespace SistemaDeRelatorios
             this.btnClose.TabStop = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // btnCinsultaRec
-            // 
-            this.btnCinsultaRec.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.btnCinsultaRec.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCinsultaRec.BackgroundImage")));
-            this.btnCinsultaRec.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnCinsultaRec.CausesValidation = false;
-            this.btnCinsultaRec.FlatAppearance.BorderSize = 0;
-            this.btnCinsultaRec.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.btnCinsultaRec.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnCinsultaRec.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCinsultaRec.ForeColor = System.Drawing.Color.LightGray;
-            this.btnCinsultaRec.Location = new System.Drawing.Point(250, 151);
-            this.btnCinsultaRec.Name = "btnCinsultaRec";
-            this.btnCinsultaRec.Size = new System.Drawing.Size(33, 34);
-            this.btnCinsultaRec.TabIndex = 36;
-            this.btnCinsultaRec.UseVisualStyleBackColor = false;
-            this.btnCinsultaRec.Click += new System.EventHandler(this.btnCinsultaRec_Click);
-            // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // dataGridViewDados
+            // 
+            this.dataGridViewDados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewDados.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dataGridViewDados.Location = new System.Drawing.Point(0, 191);
+            this.dataGridViewDados.Name = "dataGridViewDados";
+            this.dataGridViewDados.Size = new System.Drawing.Size(786, 617);
+            this.dataGridViewDados.TabIndex = 37;
+            this.dataGridViewDados.SelectionChanged += new System.EventHandler(this.dataGridViewDados_SelectionChanged);
             // 
             // FormFuncionarios
             // 
@@ -592,11 +702,11 @@ namespace SistemaDeRelatorios
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgImagem)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDados)).EndInit();
             this.panelLateral.ResumeLayout(false);
             this.panelLateral.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMini)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDados)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -609,18 +719,17 @@ namespace SistemaDeRelatorios
         private System.Windows.Forms.PictureBox btnClose;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox imgImagem;
-        private System.Windows.Forms.DataGridView dataGridViewDados;
         private System.Windows.Forms.Panel panelLateral;
-        private System.Windows.Forms.TextBox txtDep;
+        private System.Windows.Forms.TextBox txtFilial;
         private System.Windows.Forms.TextBox txtFoto;
-        private System.Windows.Forms.TextBox txtNumArm;
-        private System.Windows.Forms.TextBox txtBloco;
-        private System.Windows.Forms.TextBox txtRemark;
+        private System.Windows.Forms.TextBox txtFuncao;
+        private System.Windows.Forms.TextBox txtCargo;
+        private System.Windows.Forms.TextBox txtGrupo;
+        private System.Windows.Forms.TextBox txtDescricaoDepartamento;
+        private System.Windows.Forms.TextBox txtCentroCusto;
         private System.Windows.Forms.TextBox txtNome;
-        private System.Windows.Forms.TextBox txtNumCard;
-        private System.Windows.Forms.TextBox txtMat;
-        private System.Windows.Forms.TextBox txtFunc;
-        private System.Windows.Forms.TextBox txtSetor;
+        private System.Windows.Forms.TextBox txtMatriculaCC;
+        private System.Windows.Forms.TextBox txtMatricula;
         private System.Windows.Forms.LinkLabel linkLabel10;
         private System.Windows.Forms.LinkLabel linkLabel9;
         private System.Windows.Forms.LinkLabel linkLabel8;
@@ -641,5 +750,14 @@ namespace SistemaDeRelatorios
         private System.Windows.Forms.LinkLabel lblMat;
         private System.Windows.Forms.Button btnCinsultaRec;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.LinkLabel linkLabel15;
+        private System.Windows.Forms.LinkLabel linkLabel14;
+        private System.Windows.Forms.LinkLabel linkLabel13;
+        private System.Windows.Forms.LinkLabel linkLabel12;
+        private System.Windows.Forms.TextBox textNumeroArmario;
+        private System.Windows.Forms.TextBox textBloco;
+        private System.Windows.Forms.TextBox textDesFuncOpe;
+        private System.Windows.Forms.TextBox txtDescrPosi;
+        private System.Windows.Forms.DataGridView dataGridViewDados;
     }
 }
