@@ -81,7 +81,7 @@ namespace DataAcces
                 using (var cmd = new MySqlCommand())
                 {
                     cmd.Connection = connection;
-                    cmd.CommandText = "insert into FUNCIONARIOS (FILIAL, MATRICULA, MATRICULACC, NOME, CENTRO_CUSTO, DESCRICAO_DEPARTAMENTO, GRUPO, CARGO, FUNCAO, DESCRICAO_POSICAO, DES_FUNC_OPE, BLOCO_ARMARIO, NUMERO_ARMARIO, FOTO)" +
+                    cmd.CommandText = "insert into FUNCIONARIOS (FILIAL, MATRICULA, MATRICULACC, NOME, CENTRO_CUSTO, DESCRICAO_DEPARTAMENTO, GRUPO, CARGO, FUNCAO, DESCRICAO_POSICAO, DES_FUN_OPE, BLOCO_ARMARIO, NUMERO_ARMARIO, FOTO)" +
                         $"values ('{filial}', '{matricula}', '{matriculacc}', '{nome}', '{centroCusto}', '{descricao_departamento}', '{grupo}','{cargo}', '{funcao}', '{descreicaoPosicao}', '{desFuncope}', '{blocoArmario}', '{numeroArmario}', '{foto.Replace("\\", "/")}');";
                     cmd.CommandType = CommandType.Text;
                     cmd.ExecuteNonQuery();
